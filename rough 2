@@ -1,0 +1,102 @@
+<script type="text/x-script" class="filteredCarsTemplate">
+		<table>
+			<tr>
+
+			<th>model</th>
+			<th>Price</th>
+			<th>reg_number</th>
+
+			</tr>
+{{#each filteredCars}}
+
+<tr>
+<td>{{this.model}}</td>
+<td>{{this.price}}</td>
+<td>{{this.reg_number}}</td>
+</tr>
+{{/each}}
+</table>
+
+</script>
+</head>
+
+<body>
+
+	<div>
+		<h1>Filter widget</h1>
+		<!-- <h1>Filter</h1> -->
+
+	</div>
+
+	<div>
+
+<script type="text/x-script" class="colorDropDown">
+<option value="">select a color</option>
+{{#each colorDrop}}
+
+<option value={{this}}>{{this}}</option>
+{{/each}}
+
+</script>
+
+
+<script type="text/x-script" class="brandsDropDown">
+	<option value="">select a brand</option>
+	{{#each brandsDrop}}
+	
+	<option value={{this}}>{{this}}</option>
+	{{/each}}
+	
+	</script>
+
+
+	<script type="text/x-script" class="filteredhandlebars">
+
+<table>
+	<thead>
+		<th>model</th>
+		<th>registrations</th>
+		<th>price</th>
+		<th>Color</th>
+
+	{{#each filtered}}
+
+<tr>
+
+<td>{{this.make}}</td>
+<td>{{this.reg_number}}</td>
+<td>{{this.price}}</td>
+<td>{{this.color}}</td>
+
+</tr>
+{{/eaach}}
+
+</thead>
+</table>
+
+
+</Script>
+
+</head>
+
+<div>
+	<h1>Filter widget</h1>
+    <div class="cont">
+        <div class="colorsDrop">
+            <select class="colorsDropList"></select>
+        </div>
+
+        <div class="brandsDrop">
+            <select class="brandsDropList"></select>
+        </div>
+        <button class="btn">filter</button>
+        
+    </div>
+    <div class="filtered">
+        <ul class="filteredList"></ul>
+    </div>
+</body>
+<script src="filters.js"></script>
+
+</html>
+<!-- </body> -->

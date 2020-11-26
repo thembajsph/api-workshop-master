@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"
+		integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+	<!-- handlebars link call -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.js"
+		integrity="sha256-hSzapznWRy/aOZkctlN03an9DxCLlN8ZCQS0lxntiHg=" crossorigin="anonymous"></script>
+
+	<script type="text/x-script" class="carsTemplate">
+
+		<table style="width:100%">
+			<tr>
+			  <th>makes</th>
+			  <th>model</th>
+			  <th>color</th>
+			  <th>price</th>
+			  <th>regs</th>
+			
+			</tr>
+{{#each groupCars}}
+
+	<tr>
+		<td>{{this.make}}</td>
+	  <td>{{this.model}}</td>
+	  <td>{{this.color}}</td>
+	  <td>{{this.price}}</td>
+	  <td>{{this.reg_number}}</td>
+
+	</tr>
+
+	  {{/each}}
+	</table>
+
+</script>
+	<script type="text/x-script" class="colorTemplate">
+
+	{{#each colorings}}
+	<li>{{this}}</li>
+	{{/each}}
+	
+	</script>
+
+
+	<script type="text/x-script" class="brandsTemplate">
+
+		{{#each makes}}
+		<li>{{this}}</li>
+		{{/each}}
+		
+		</script>
+
+
+
+	<script type="text/x-script" class="filteredCarsTemplate">
+			<table>
+				<tr>
+
+				<th>model</th>
+				<th>Price</th>
+				<th>reg_number</th>
+
+				</tr>
+{{#each filteredCars}}
+
+<tr>
+	<td>{{this.model}}</td>
+	<td>{{this.price}}</td>
+	<td>{{this.reg_number}}</td>
+</tr>
+{{/each}}
+</table>
+
+</script>
+
+</head>
+
+<body>
+
+	<h1>MY Car info</h1>
+
+
+	<h2>brands</h2>
+	<div class="brand">
+
+		<ul class="brands">
+
+		</ul>
+
+
+	</div>
+
+
+	<h2>Colors</h2>
+	<div class="color">
+		<ul class="colors">
+
+		</ul>
+
+	</div>
+
+
+
+	<h2>Cars</h2>
+	<div class="car">
+		<ul class="cars">
+
+		</ul>
+
+	</div>
+
+	
+
+</body>
+<script src="cars-function.js"></script>
+<script src="cars.js"></script>
+
+</html>

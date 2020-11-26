@@ -1,0 +1,10 @@
+<h1>Account</h1>
+
+{{#if user}}
+<i>Account for: </i> {{user.displayName}} <strong> @{{user.username}}</strong>
+<div>   
+    <a href="/logout">Logout</a>
+</div>
+{{else}}
+    <a href="/auth/github">Login</a>
+{{/if}}
